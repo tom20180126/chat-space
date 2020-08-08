@@ -14,11 +14,10 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|group|string|null: false, foreign_key: true|
-|member|string|null: false, foreign_key: true|
+|name|string|null: false|
 
 ### Association
-- has_many :user, through: members
+- has_many :users, through: members
 - has_many :messages
 - has_many :members
 
@@ -33,23 +32,12 @@
 - belongs_to :group
 - belongs_to :user
 
-## member table
-
-|Column|Type|Options|
-|------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
-
-### Association
-- belongs_to :group
-- belongs_to :user
-
 # message table
 
 |Column|Type|Options|
 |------|----|-------|
-|body|text|null: false|
-|image|string|null: false, foreign_key: true|
+|body|text||
+|image|string||
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
