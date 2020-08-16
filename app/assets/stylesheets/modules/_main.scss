@@ -1,0 +1,98 @@
+.MainChat {
+  width: calc(100% - 300px);
+  &__Header {
+    height: 100px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    &--GroupName {
+      margin: 35px 0 0 40px;
+      font-size: 20px;
+      color: #333333;
+      &--GroupMember {
+        font-size: 12px;
+        color: #999999;
+        margin: 15px 0 0 0;
+      }
+    }
+    &--Edit {
+      margin: 28px 40px 28px 0;
+      .main__btn {
+        display: block;
+        padding: 0 20px;
+        border: 1px solid #38aef0;
+        height: 40px;
+        line-height: 40px;
+        font-size: 16px;
+        color: #38aef0;
+        text-decoration: none;
+      }
+    }
+  }
+  &__Messages {
+    height: calc(100vh - 190px);
+    background-color: #fafafa;
+    padding: 35px 40px 0;
+    &__message {
+      margin-bottom: 46px;
+      &__info {
+        display: flex;
+        &--User {
+          font-size: 16px;
+          color: #333333;
+          font-weight: bold;
+        }
+        &--Time {
+          font-size: 12px;
+          color: #999999;
+          padding-left: 10px;
+        }
+      }
+      &--Comment {
+        margin-top: 12px;
+        font-size: 14px;
+        color: #434a54;
+      }
+    }
+  }
+  &__Forms {
+    height: 90px;
+    background-color: #d2d2d2;
+    padding: 20px 40px;
+    form {
+      display: flex;
+      .input-box {
+        width: 100%;
+        background-color: #ffffff;
+        position: relative;
+        &__text {
+          border: none;
+          height: 50px;
+          width: 100%;
+          background-color: #ffffff;
+          padding: 0 40px 0 10px;
+        }
+        &__image {
+          position: absolute;
+          line-height: 50px;
+          right: 10px;
+          font-size: 25px;
+          &__file {
+            display: none;
+          }
+        }
+      }
+      .submit-btn {
+        height: 50px;
+        width: 100px;
+        background-color: #38aef0;
+        color: #ffffff;
+        font-size: 16px;
+        padding: 0 30px;
+        margin-left: 15px;
+        border: none;
+      }
+    }
+  }
+}

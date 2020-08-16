@@ -1,0 +1,47 @@
+.SideBar {
+  width: 300px;
+  height: 100vh;
+  background-color: #2f3e51;
+  &__Header {
+    height: 100px;
+    background-color: #253141;
+    display: flex;
+    align-items: center;
+    color: #ffffff;
+    &--SideItem {
+      height: 20px;
+      width: 260px;
+      margin: 0 20px;
+      background-color: #253141;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 16px;
+      font-weight: bold;
+      &--SideIcon {
+        width: 60px;
+        display: flex;
+        justify-content: flex-end;
+        .icon__btnA, .icon__btnB{
+          color: #ffffff;
+          margin-left: 5px;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  &__Group {
+    display: block;
+    align-items: center;
+    margin: 20px 20px 40px 20px;
+    &--GroupName {
+      margin-bottom: 5px;
+      font-size: 15px;
+      color: #ffffff;
+    }
+    &--NewMessage {
+      font-size: 11px;
+      color: #ffffff;
+    }
+  }
+}
