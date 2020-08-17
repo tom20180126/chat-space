@@ -1,0 +1,34 @@
+.MainChat
+  .MainChat__Header
+    .MainChat__Header--GroupName
+      test
+      .MainChat__Header--GroupName--GroupMember
+        Member:mmmm
+    .MainChat__Header--Edit
+      = link_to "#", class: "main__btn" do
+        Edit
+  .MainChat__Messages
+    .MainChat__Messages__message
+      .MainChat__Messages__message__info
+        .MainChat__Messages__message__info--User
+          tom 
+        .MainChat__Messages__message__info--Time
+          2020/08/15(Sat) 17:00:00
+      .MainChat__Messages__message--Comment
+        おはよう！
+    .MainChat__Messages__message
+      .MainChat__Messages__message__info
+        .MainChat__Messages__message__info--User
+          tom 
+        .MainChat__Messages__message__info--Time
+          2020/08/15(Sat) 20:00:00
+      .MainChat__Messages__message--Comment
+        こんばんは！
+  .MainChat__Forms
+    %form.new_message
+      .input-box
+        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        %label{class: "input-box__image"}
+          = icon('far', 'image')
+          %input{type: "file", class: "input-box__image__file"}
+      %input{type: "submit", class: "submit-btn", value: "Send"}
