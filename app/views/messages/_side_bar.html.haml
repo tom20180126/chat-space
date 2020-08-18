@@ -1,11 +1,11 @@
 .SideBar
   .SideBar__Header
     .SideBar__Header--SideItem
-      Tom
+      = current_user.name
       .SideBar__Header--SideItem--SideIcon
         = link_to "#", class: "icon__btnA" do
           = icon('fas', 'edit')
-        = link_to "#", class: "icon__btnB" do
+        = link_to edit_user_path(current_user), class: "icon__btnB" do
           = icon('fas', 'cog')
   .SideBar__Group
     .SideBar__Group--GroupName
