@@ -32,7 +32,7 @@
 - belongs_to :group
 - belongs_to :user
 
-# message table
+## message table
 
 |Column|Type|Options|
 |------|----|-------|
