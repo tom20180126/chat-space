@@ -1,34 +1,22 @@
 .MainChat
   .MainChat__Header
     .MainChat__Header--GroupName
-      test
+      = @group.name
       .MainChat__Header--GroupName--GroupMember
-        Member:mmmm
+        Member: 
+        - @group.users.each do |user|
+          = user.name
     .MainChat__Header--Edit
-      = link_to "#", class: "main__btn" do
+      = link_to edit_group_path(@group.id), class: "main__btn" do
         Edit
   .MainChat__Messages
-    .MainChat__Messages__message
-      .MainChat__Messages__message__info
-        .MainChat__Messages__message__info--User
-          tom 
-        .MainChat__Messages__message__info--Time
-          2020/08/15(Sat) 17:00:00
-      .MainChat__Messages__message--Comment
-        おはよう！
-    .MainChat__Messages__message
-      .MainChat__Messages__message__info
-        .MainChat__Messages__message__info--User
-          tom 
-        .MainChat__Messages__message__info--Time
-          2020/08/15(Sat) 20:00:00
-      .MainChat__Messages__message--Comment
-        こんばんは！
+    = render @messages
   .MainChat__Forms
-    %form.new_message
+    / %form.new_message
+    = form_with model: [@group, @message], html: {class: "Form"}, local: true do |f|
       .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
-        %label{class: "input-box__image"}
+        = f.text_field :content, class: 'input-box__text', placeholder: "type a message"
+        = f.label :image, class: 'input-box__image' do
           = icon('far', 'image')
-          %input{type: "file", class: "input-box__image__file"}
-      %input{type: "submit", class: "submit-btn", value: "Send"}
+          = f.file_field :image, class: 'input-box__image__file'
+      = f.submit 'Send', class: 'submit-btn'
