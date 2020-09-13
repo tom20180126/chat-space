@@ -2,7 +2,8 @@ $(function(){
   function buildHTML(message){
     if (message.image) {
       let html = 
-        `<div class="MainChat__Messages__message">
+            // appendするHTMLを生成するbuildHTMLに、カスタムデータ属性を付与
+        `<div class="MainChat__Messages__message" data-message-id=${message.id}>
           <div class="MainChat__Messages__message__info">
             <div class="MainChat__Messages__message__info--User">
               ${message.user_name}
@@ -21,7 +22,7 @@ $(function(){
       return html;
     } else {
       let html =
-        `<div class="MainChat__Messages__message">
+        `<div class="MainChat__Messages__message" data-message-id=${message.id}>
             <div class="MainChat__Messages__message__info">
               <div class="MainChat__Messages__message__info--User">
                 ${message.user_name}
@@ -60,6 +61,7 @@ $(function(){
     })
     .fail(function() {
       alert("メッセージ送信に失敗しました");
+      $('.submit-btn').prop("disabled", false);
     });
   });
 });
